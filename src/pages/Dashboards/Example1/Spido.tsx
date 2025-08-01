@@ -119,7 +119,7 @@ const Spido = () => {
 
 
   useEffect(() => {
-    const sensorTypes = ['Dissolved_Oxygen', 'Nitrogen', 'Phosphorus', 'Salinity', 'Soil_EC', 'Soil_Moisture', 'Soil_Temperature', 'Soil_pH'];
+    const sensorTypes = ['DissolvedOxygen', 'Nitrogen', 'Phosphorus', 'Salinity', 'Soil_EC', 'Soil_Moisture', 'Temperature', 'pH'];
     sensorTypes.forEach((sensorType) => fetchSensorData(sensorType));
 
     const intervalId = setInterval(() => {

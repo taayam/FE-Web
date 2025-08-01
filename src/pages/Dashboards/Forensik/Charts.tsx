@@ -1034,7 +1034,7 @@ const EnvironmentComparisonChartFosfor = ({ chartId, selectedDateRange }: any) =
         if (selectedDateRange) {
             const startDate = selectedDateRange[0].toLocaleDateString('id-ID');
             const endDate = selectedDateRange[1].toLocaleDateString('id-ID');
-            fetch(`https://be-ciamis.vercel.app/api/forensik/Fosfor?start_date=${startDate}&end_date=${endDate}`)
+            fetch(`https://be-ciamis.vercel.app/api/forensik/Phosphorus?start_date=${startDate}&end_date=${endDate}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log("Sensor Data Fosfor:", data);

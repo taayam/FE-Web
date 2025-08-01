@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import GaugeComponent from 'react-gauge-component';
 
 interface SensorData {
-  Dissolved_Oxygen: { nilai: number } | null;
+  DissolvedOxygen: { nilai: number } | null;
   Nitrogen: { nilai: number } | null;
   Phosphorus: { nilai: number } | null;
   Salinity: { nilai: number } | null;
   Soil_EC: { nilai: number } | null;
   Soil_Moisture: { nilai: number } | null;
-  Soil_Temperature: { nilai: number } | null;
-  Soil_pH: { nilai: number } | null;
+  Temperature: { nilai: number } | null;
+  pH: { nilai: number } | null;
 }
 
 
@@ -88,14 +88,14 @@ const SensorCard = ({
 
 const Spido = () => {
   const [sensorData, setSensorData] = useState<SensorData>({
-    Dissolved_Oxygen: null,
+    DissolvedOxygen: null,
     Nitrogen: null,
     Phosphorus: null,
     Salinity: null,
     Soil_EC: null,
     Soil_Moisture: null,
-    Soil_Temperature: null,
-    Soil_pH: null,
+    Temperature: null,
+    pH: null,
   });
 
   const [dayValue, setDayValue] = useState<number>(1);
@@ -137,7 +137,7 @@ const Spido = () => {
 
       <SensorCard
         title="Suhu Air"
-        data={sensorData.Soil_Temperature?.nilai ?? 0}
+        data={sensorData.Temperature?.nilai ?? 0}
         unit="°C"
         sensorColor="red"
         id="gauge-temp-ayam"
@@ -172,7 +172,7 @@ const Spido = () => {
       {/* Sensor lainnya tetap seperti sebelumnya */}
       <SensorCard
         title="Dissolved Oxygen"
-        data={sensorData.Dissolved_Oxygen?.nilai ?? 0}
+        data={sensorData.DissolvedOxygen?.nilai ?? 0}
         unit="mg/L"
         sensorColor="green"
         id="gauge-co2"
@@ -186,7 +186,7 @@ const Spido = () => {
       />
             <SensorCard
         title="pH Air"
-        data={sensorData.Soil_pH?.nilai ?? 0}
+        data={sensorData.pH?.nilai ?? 0}
         unit=""
         sensorColor="red"
         id="gauge-temp-env"
